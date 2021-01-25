@@ -10,9 +10,9 @@ import './App.css';
 
 function App() {
   const [formValues, setFormValues] = useState({
-    1: null,
-    2: null,
-    3: null
+    1: "",
+    2: "",
+    3: ""
   });
 
   //handleSelect to increment the count of the house value after an option is selected
