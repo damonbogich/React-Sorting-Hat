@@ -1,7 +1,8 @@
 //questions that will determine which house the user will be put into.
 import React from 'react';
-export default function Form({findHouse, handleSelect, formValues}) {
-    console.log(formValues)
+export default function Form({userHouse, findHouse, handleSelect, formValues}) {
+    console.log(userHouse === "", 'userHouse')
+    let undeterminedHouse = "undetermined until you fill out the form and click the Find Your House button";
     return (
         <form>
             <label> Which of the following do you value most?
@@ -35,6 +36,8 @@ export default function Form({findHouse, handleSelect, formValues}) {
             <button>Submit</button> 
             {/* //when the form is submitted, we want the value of each option to be counted 
             so set the values to state........????*/}
+            <p>Your house is {(userHouse === "") ? "undetermined until you fill out the form and click the find your house  button" : <b>{userHouse}</b>}</p>
+            
         </form>
     )
 }

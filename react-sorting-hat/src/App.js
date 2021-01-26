@@ -14,7 +14,7 @@ function App() {
     2: "",
     3: ""
   });
-  const [userHouse, setUserHouse] = useState("")
+  const [userHouse, setUserHouse] = useState("");
 
   //handleSelect to increment the count of the house value after an option is selected
   const handleSelect = (e) => {
@@ -29,7 +29,6 @@ function App() {
   const findHouse = (e) => {
     e.preventDefault();
     let counter = {Gryffindor: 0, Hufflepuff: 0, Ravenclaw: 0, Slytherin: 0,}
- 
     let listOfValues = Object.values(formValues);
 
     listOfValues.forEach((item) => {
@@ -47,18 +46,17 @@ function App() {
       }
       return counter
     })
-    console.log(counter, 'countercounter');
     let highestVal = Object.keys(counter).reduce(function(a, b){ return counter[a] > counter[b] ? a : b });
-    console.log(highestVal, typeof(highestVal), 'highest value')
     setUserHouse(highestVal);
-  }
+  };
+
   return (
     <div className="App">
       <Route exact path="/">
         <Greeting />
       </Route>
       <Route path="/form">
-        <Form findHouse={findHouse} handleSelect={handleSelect} formValues={formValues}/>
+        <Form userHouse={userHouse} findHouse={findHouse} handleSelect={handleSelect} formValues={formValues}/>
       </Route>
     </div>
   );
