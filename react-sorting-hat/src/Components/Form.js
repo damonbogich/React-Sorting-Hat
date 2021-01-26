@@ -1,12 +1,11 @@
 //questions that will determine which house the user will be put into.
 import React from 'react';
 export default function Form({userHouse, findHouse, handleSelect, formValues}) {
-    console.log(userHouse === "", 'userHouse')
-    let undeterminedHouse = "undetermined until you fill out the form and click the Find Your House button";
+    console.log(formValues[1], 'value1');
     return (
         <form>
             <label> Which of the following do you value most?
-                <select name={1}  onChange={(e) => handleSelect(e)}>
+                <select name={1} onChange={(e) => handleSelect(e)}>
                     <option value="none">Choose One</option>
                     <option value="Gryffindor">Bravery</option>
                     <option value="Hufflepuff">Dedication</option>

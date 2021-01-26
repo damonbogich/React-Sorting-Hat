@@ -8,12 +8,11 @@ import {Route} from 'react-router-dom';
 import {hogwartsHouses} from './data';
 import './App.css';
 
+
+
 function App() {
-  const [formValues, setFormValues] = useState({
-    1: "",
-    2: "",
-    3: ""
-  });
+  
+  const [formValues, setFormValues] = useState({1: "", 2: "", 3: ""});
   const [userHouse, setUserHouse] = useState("");
 
   //handleSelect to increment the count of the house value after an option is selected
@@ -21,11 +20,11 @@ function App() {
     let index = e.target.name
     let newArray = formValues;
     newArray[index] = e.target.value;
-    console.log(newArray)
+    console.log(newArray, index, newArray[index], 'hereeeeeeee')
     setFormValues(newArray)
     console.log(formValues, 'formvalues');
   };
-  //handleSubmit will push the user to whichever house they're selected for
+  //findhouse determines what house the user belongs to and sets that house to state
   const findHouse = (e) => {
     e.preventDefault();
     let counter = {Gryffindor: 0, Hufflepuff: 0, Ravenclaw: 0, Slytherin: 0,}
@@ -47,7 +46,9 @@ function App() {
       return counter
     })
     let highestVal = Object.keys(counter).reduce(function(a, b){ return counter[a] > counter[b] ? a : b });
-    setUserHouse(highestVal);
+    setUserHouse(highestVal)
+    setFormValues({1: "", 2: "", 3: ""})
+    console.log(formValues, 'form values log after find house button');
   };
 
   return (
