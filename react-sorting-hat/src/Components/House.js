@@ -29,9 +29,10 @@ export default function House({userHouse}) {
                 <h2>Famous Alumni:</h2>
                 <ul>
                     {house.famousMembers.map((wizard, index) => {
-                        return <li key={index}>{wizard}</li>
+                     return <li key={index}>{wizard}</li>
                     })}
                 </ul>
+                <p>House Ghost: {house.houseGhost}</p>
             </div>
         )
     }
