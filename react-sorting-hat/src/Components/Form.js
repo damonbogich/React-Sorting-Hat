@@ -1,11 +1,10 @@
 //questions that will determine which house the user will be put into.
 import React from 'react';
 export default function Form({userHouse, findHouse, handleSelect, formValues}) {
-    console.log(formValues[1], 'value1');
     return (
         <form>
             <label> Which of the following do you value most?
-                <select name={1} onChange={(e) => handleSelect(e)}>
+                <select name={1} value={formValues[1]} onChange={(e) => handleSelect(e)}>
                     <option value="none">Choose One</option>
                     <option value="Gryffindor">Bravery</option>
                     <option value="Hufflepuff">Dedication</option>
@@ -14,7 +13,7 @@ export default function Form({userHouse, findHouse, handleSelect, formValues}) {
                 </select>
             </label>
             <label> Which element do you identify with most?
-                <select name={2}  onChange={(e) => handleSelect(e)}>
+                <select name={2} value={formValues[2]}  onChange={(e) => handleSelect(e)}>
                     <option value="none">Choose One</option>
                     <option value="Gryffindor">Fire</option>
                     <option value="Hufflepuff">Earth</option>
@@ -23,7 +22,7 @@ export default function Form({userHouse, findHouse, handleSelect, formValues}) {
                 </select>
             </label>
             <label> Choose your favorite:
-                <select name={3}  onChange={(e) => handleSelect(e)}>
+                <select name={3} value={formValues[3]}  onChange={(e) => handleSelect(e)}>
                     <option value="none">Choose One</option>
                     <option value="Gryffindor">Harry Potter</option>
                     <option value="Hufflepuff">Newt Scamander</option>

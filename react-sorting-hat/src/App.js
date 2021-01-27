@@ -16,14 +16,20 @@ function App() {
   const [userHouse, setUserHouse] = useState("");
 
   //handleSelect to increment the count of the house value after an option is selected
-  const handleSelect = (e) => {
-    let index = e.target.name
-    let newArray = formValues;
-    newArray[index] = e.target.value;
-    console.log(newArray, index, newArray[index], 'hereeeeeeee')
-    setFormValues(newArray)
-    console.log(formValues, 'formvalues');
-  };
+  // const handleSelect = (e) => {
+  //   let index = e.target.name
+  //   let newArray = formValues;
+  //   newArray[index] = e.target.value;
+  //   console.log(newArray, index, newArray[index], 'hereeeeeeee')
+  //   setFormValues(newArray)
+  //   console.log(formValues, 'formvalues');
+  // };
+  const handleSelect = e => {
+    let inputName = e.target.name;
+    let value = e.target.value;
+    console.log('name:', inputName, 'value:', value)
+    setFormValues({...formValues, [inputName]: value})
+  }
   //findhouse determines what house the user belongs to and sets that house to state
   const findHouse = (e) => {
     e.preventDefault();
@@ -48,7 +54,6 @@ function App() {
     let highestVal = Object.keys(counter).reduce(function(a, b){ return counter[a] > counter[b] ? a : b });
     setUserHouse(highestVal)
     setFormValues({1: "", 2: "", 3: ""})
-    console.log(formValues, 'form values log after find house button');
   };
 
   return (
