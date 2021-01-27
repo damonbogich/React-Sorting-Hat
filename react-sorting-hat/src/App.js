@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 import Greeting from './Components/Greeting';
 import Form from './Components/Form';
+import House from './Components/House';
 
 import {Route} from 'react-router-dom';
 
@@ -63,6 +64,9 @@ function App() {
       </Route>
       <Route path="/form">
         <Form userHouse={userHouse} findHouse={findHouse} handleSelect={handleSelect} formValues={formValues}/>
+      </Route>
+      <Route path="/house">
+        <House userHouse={userHouse}/>
       </Route>
     </div>
   );

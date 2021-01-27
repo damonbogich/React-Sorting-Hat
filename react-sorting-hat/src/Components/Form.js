@@ -1,5 +1,6 @@
 //questions that will determine which house the user will be put into.
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 
 export default function Form({userHouse, findHouse, handleSelect, formValues}) {
@@ -35,9 +36,6 @@ export default function Form({userHouse, findHouse, handleSelect, formValues}) {
                 </label>
                 <button onClick={(e) => findHouse(e)}>Find Your house</button>
                 <button>Submit</button> 
-                {/* //when the form is submitted, we want the value of each option to be counted 
-                so set the values to state........????*/}
-                
             </form>
         )
     } else {
@@ -45,7 +43,7 @@ export default function Form({userHouse, findHouse, handleSelect, formValues}) {
             <div>
                 <h2>Congratulations, you have been accepted to {userHouse}!</h2>
                 <p>Click the button for your house to learn about it!</p>
-                <button>{userHouse}</button>
+                <Link to="/house"><button>{userHouse}</button></Link> 
             </div>
         )
     }
