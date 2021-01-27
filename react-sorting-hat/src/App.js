@@ -24,10 +24,10 @@ function App() {
   //   setFormValues(newArray)
   //   console.log(formValues, 'formvalues');
   // };
+  //sets input values to state
   const handleSelect = e => {
     let inputName = e.target.name;
     let value = e.target.value;
-    console.log('name:', inputName, 'value:', value)
     setFormValues({...formValues, [inputName]: value})
   }
   //findhouse determines what house the user belongs to and sets that house to state
